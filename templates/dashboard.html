@@ -1,0 +1,90 @@
+<div class="container">
+   
+    <div class="row">
+
+        <div class="col-sm-11 col-lg-11">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-equalizer glyphicon-icon" aria-hidden="true"></div>  Builds</div>
+                <div class="panel-body">
+                    <canvas id="line" class="chart chart-line" chart-data="data"
+                           chart-labels="labels" chart-series="series" chart-options="options"
+                           chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
+                </div>
+            </div>
+        </div>     
+          
+      </div><!-- /row -->
+    
+      <div class="row">
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Latest Builds (5)</div>
+                <div class="panel-body">
+                    <table class="table table-hover art-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Version</th>
+                                <th>Date</th>                               
+                                <th>Author</th>    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><!-- <fav-star-directive></fav-star-directive> --></td>
+                                <td>404</td>
+                                <td>N/A</td>
+                                <td>Unable to find latest!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Filestore Summary</div>
+                <div class="panel-body">
+                    <table class="table table-hover art-table">
+                        <thead>
+                            <tr>
+                                <th>Space</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total:</td>
+                                <td>{{storageInfo.totalSpace}}</td>
+                            </tr>
+                            <tr>
+                                <td>Used:</td>
+                                <td>{{storageInfo.usedSpace}}</td>
+                            </tr>
+                            <tr>
+                                <td>Free:</td>
+                                <td>{{storageInfo.freeSpace}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Server Time & Date</div>
+                <div class="panel-body time-date">
+                    <ds-widget-clock show-digital digital-format="'hh:mm:ss'"></ds-widget-clock>
+                    <ds-widget-clock show-digital digital-format="'yyyy-MM-d'"></ds-widget-clock>
+                </div>
+            </div>
+        </div>
+        
+          
+      </div><!-- /row -->
+      
+</div>

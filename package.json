@@ -1,0 +1,32 @@
+{
+  "name": "artifactory-client",
+  "version": "1.0.0",
+  "description": "artifactory web client",
+  "main": "index.html",
+  "author": "softhouse",
+  "license": "MIT",
+  "scripts": {
+    "css-comp": "lessc css/styles.less css/styles.css",
+    "start": "node webserver.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.softhouse.se:TetraPakWeb/Artifactory-Client.git"
+  },
+  "keywords": [
+    "artifactory"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-chart.js": "^1.1.1",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "cytoscape": "^2.7.13",
+    "cytoscape-edgehandles": "^2.7.1",
+    "http-server": "^0.9.0",
+    "jquery": "^3.1.1",
+    "less": "^2.7.1"
+  }
+}

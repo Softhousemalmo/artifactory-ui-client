@@ -1,0 +1,125 @@
+<div>
+
+    <ul class="nav nav-tabs nav-justified" style="margin-top: 10px;">
+        <li style="cursor: pointer;" role="presentation" class="{{homeActiveTrue}}"><a ng-click="homeActive()">General</a></li>
+        <li style="cursor: pointer;" role="presentation" class="{{propertiesActiveTrue}}"><a ng-click="propertiesActive()">Properties</a></li>
+        <li style="cursor: pointer;"  role="presentation" class="{{buildsActiveTrue}}"><a ng-click="buildsActive()">Builds</a></li>
+        <li style="cursor: pointer;"  role="presentation" class="{{watchersActiveTrue}}"><a ng-click="watchersActive()">Watchers</a></li>
+        <li style="cursor: pointer;"  role="presentation"><a href="#/compatibility">Compatibility</a>
+        </li>
+    </ul>
+    <div ng-show="homeActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+        <div class="container-fluid">
+            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Info 
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true" style="text-align: right;"></span>
+                <hr>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-2">
+                Name: <br>
+                Version: <br>
+                Repository Path: <br>
+                Module ID: <br>
+                Deployed by: <br>
+                Size: <br>
+                Created: <br>
+                Last Modified: <br>
+
+            </div>
+            <div class="col-md-10">
+                {{repoData.repo}} <br>
+                Version: <br>
+                path <br>
+                Module ID: <br>
+                Deployed by: <br>
+                Size: <br>
+                Created: <br>
+                Last Modified: <br>
+  
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Pakage information<hr></div>
+        </div>
+        <div class="container-fluid" style="font-size: 14px;">
+            <div class="col-md-2">
+                Name: <br>
+                Description: <br>
+                Latest Version: <br>
+
+            </div>
+            <div class="col-md-10">
+ 
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Checksums<hr></div>
+        </div>
+        <div class="container-fluid" style="font-size: 14px;">
+            <div class="col-md-2">
+                ID: <br>
+
+            </div>
+            <div class="col-md-10">
+                CHECKSUM GOES HERE <br>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div ng-show="propertiesActiveTrue"style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+        <br><br>
+        <div class="container-fluid" style="color: #94C6F0; font-weight: bold;">
+            <div class="row" style="margin-left: 20px";>
+                <span style="color: #000;">Add:</span> <span style="margin-left: 20px;">Properties | Property Set</span>
+                <br><br>
+                <input type="text" placeholder="Name *" class="form-control" style="border-radius: 0px; width: 300px; height: 50px; float: left; margin-right: 20px;">
+                <input type="text" placeholder="Value" class="form-control" style="border-radius: 0px; width: 300px; height: 50px; float: left; margin-right: 20px;">
+                <button style="height: 50px; width: 100px; color: #fff; background: #CCC; border: 0;">Add</button>
+            </div>
+
+            <div class="row">
+                <table class="table table-striped table-hover" style="font-size: 14px; margin-left: 34px; min-width: 300px; max-width: 900px; margin-top: 20px;">
+                    <thead style="color: #94C6F0;">
+                        <th><span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="top: -3px;"></span></th>
+                        <th>Property</th>
+                        <th>Value(s)</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="top: 3px;"></span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-show="buildsActiveTrue"style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+        <br><br>
+        <div class="container-fluid">
+            <div class="row">
+                <table class="table table-striped table-hover" style="font-size: 14px">
+                    <thead style="color: #94C6F0;">
+                        <th>Library</th>
+                        <th>Latest</th>
+                        <th>Latest Released</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><br></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+
+</div>
