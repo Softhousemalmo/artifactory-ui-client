@@ -1,9 +1,13 @@
 ArtifactoryApp.service('APIService', function() {
   
-    var storageinfo = "http://localhost:3000/api/storageinfo";
+    var APIUrl = "http://localhost:3000/api/";
+
+    var storageinfo = APIUrl + "storageinfo/";
+    var storage = APIUrl + "storage/";
     
     return {
-        storageinfo: storageinfo
+        storageinfo: storageinfo,
+        storage: storage
     }; 
     
 });

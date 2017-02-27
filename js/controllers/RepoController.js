@@ -1,5 +1,5 @@
 ArtifactoryApp.controller("RepoController",
-    function ($scope, $http, $routeParams){
+    function ($scope, $http, $routeParams, APIService){
 
     $scope.homeActiveTrue = "active";  
     
@@ -34,7 +34,7 @@ ArtifactoryApp.controller("RepoController",
     
     $http ({
         method: 'GET',
-        url: 'http://artifactory.softhouse.se/artifactory/api/storage/' + $routeParams.id + '/',
+        url: APIService.storage + $routeParams.id + '/',
         }).then(function successCallback(response) {
             console.log(response);
             $scope.repoData = response.data;
