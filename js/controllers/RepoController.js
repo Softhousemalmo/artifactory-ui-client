@@ -36,7 +36,7 @@ ArtifactoryApp.controller("RepoController",
         method: 'GET',
         url: APIService.storage + $routeParams.id + '/',
         }).then(function successCallback(response) {
-            console.log(response);
+            //console.log(response);
             $scope.repoData = response.data;
             console.log($scope.repoData);
         }, function errorCallback(response) {

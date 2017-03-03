@@ -30,12 +30,12 @@
             <div class="col-md-10">
                 {{repoData.repo}} <br>
                 Version: <br>
-                path <br>
+                {{repoData.path}} <br>
                 Module ID: <br>
                 Deployed by: <br>
                 Size: <br>
-                Created: <br>
-                Last Modified: <br>
+                {{repoData.created.split("T")}} <br>
+                {{repoData.lastModified}} <br>
   
             </div>
         </div>

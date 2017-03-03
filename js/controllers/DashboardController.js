@@ -7,9 +7,9 @@ ArtifactoryApp.controller("DashboardController",
         method: 'GET',
         url: APIService.storageinfo,
         }).then(function successCallback(response) {
-            console.log(response);
+            //console.log(response);
             $scope.storageInfo = response.data.storageSummary.fileStoreSummary;
-            console.log($scope.storageInfo);
+            //console.log($scope.storageInfo);
         }, function errorCallback(response) {
             if(response.status = 401) {
                 console.log(response);
@@ -24,7 +24,7 @@ ArtifactoryApp.controller("DashboardController",
         [28, 48, 40, 19, 86, 27, 90]
     ];
     $scope.onClick = function (points, evt) {
-        console.log(points, evt);
+        //console.log(points, evt);
     };
     
     $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];

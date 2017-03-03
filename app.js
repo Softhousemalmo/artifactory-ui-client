@@ -39,10 +39,3 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
     }
                        
 ]);
-
-ArtifactoryApp.config(
-    function ($httpProvider) {
-        $httpProvider.defaults.headers.common['X-Requested-By'] = 'XMLHttpRequest';
-        $httpProvider.defaults.headers.common['X-JFrog-Art-Api'] = 'AKCp2VokTFqQfV5UUja36PfcCref4qFeNPf8Xtu2JUAorcz9q9MESZABck1uwLCUHZe4TPgsG';
-    }
-);
