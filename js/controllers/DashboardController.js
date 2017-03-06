@@ -2,7 +2,7 @@ ArtifactoryApp.controller("DashboardController",
     function (
         $scope, $location, $http, APIService
     ){
-        
+   /*     
     $http ({
         method: 'GET',
         url: APIService.storageinfo,
@@ -16,7 +16,7 @@ ArtifactoryApp.controller("DashboardController",
         }
     });
 
-    
+    */
     $scope.labels = ["February", "March", "April", "May", "June", "July", "August"];
     $scope.series = ['Series A', 'Series B'];
     $scope.data = [

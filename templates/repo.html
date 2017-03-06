@@ -1,75 +1,76 @@
-<div>
+<ul class="nav nav-tabs nav-justified" style="margin-top: 10px;">
+    <li style="cursor: pointer;" role="presentation" class="{{generalActiveTrue}}"><a ng-click="generalActive()">General</a></li>
+    <li style="cursor: pointer;" role="presentation" class="{{propertiesActiveTrue}}"><a ng-click="propertiesActive()">Properties</a></li>
+    </li>
+</ul>
+<div ng-show="generalActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <br>
+            <h3 style="color: #94C6F0;"><span class="glyphicon glyphicon-folder-close"></span> {{header}}</h3>
+        </div>
+        <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Info 
+            <hr>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-2">
+            Name: <br>
+            Path: <br>
+            Created: <br>
+            Last Modified: <br>
+            Last Updated: <br>
 
-    <ul class="nav nav-tabs nav-justified" style="margin-top: 10px;">
-        <li style="cursor: pointer;" role="presentation" class="{{homeActiveTrue}}"><a ng-click="homeActive()">General</a></li>
-        <li style="cursor: pointer;" role="presentation" class="{{propertiesActiveTrue}}"><a ng-click="propertiesActive()">Properties</a></li>
-        <li style="cursor: pointer;"  role="presentation" class="{{buildsActiveTrue}}"><a ng-click="buildsActive()">Builds</a></li>
-        <li style="cursor: pointer;"  role="presentation" class="{{watchersActiveTrue}}"><a ng-click="watchersActive()">Watchers</a></li>
-        <li style="cursor: pointer;"  role="presentation"><a href="#/compatibility">Compatibility</a>
-        </li>
-    </ul>
-    <div ng-show="homeActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
-        <div class="container-fluid">
-            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Info 
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true" style="text-align: right;"></span>
-                <hr>
-            </div>
         </div>
-        <div class="container-fluid">
-            <div class="col-md-2">
-                Name: <br>
-                Version: <br>
-                Repository Path: <br>
-                Module ID: <br>
-                Deployed by: <br>
-                Size: <br>
-                Created: <br>
-                Last Modified: <br>
+        <div class="col-md-10">
+            {{repoData.repo}} <br>
+            {{repoData.path}} <br>
+            {{repoData.created}} <br>
+            {{repoData.lastModified}} <br>
+            {{repoData.lastUpdated}} <br>
+            
 
-            </div>
-            <div class="col-md-10">
-                {{repoData.repo}} <br>
-                Version: <br>
-                {{repoData.path}} <br>
-                Module ID: <br>
-                Deployed by: <br>
-                Size: <br>
-                {{repoData.created.split("T")}} <br>
-                {{repoData.lastModified}} <br>
-  
-            </div>
         </div>
-        <div class="container-fluid">
-            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Pakage information<hr></div>
-        </div>
-        <div class="container-fluid" style="font-size: 14px;">
-            <div class="col-md-2">
-                Name: <br>
-                Description: <br>
-                Latest Version: <br>
-
-            </div>
-            <div class="col-md-10">
- 
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Checksums<hr></div>
-        </div>
-        <div class="container-fluid" style="font-size: 14px;">
-            <div class="col-md-2">
-                ID: <br>
-
-            </div>
-            <div class="col-md-10">
-                CHECKSUM GOES HERE <br>
-            </div>
-        </div>
-        <br><br>
     </div>
 
-    <div ng-show="propertiesActiveTrue"style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
-        <br><br>
+    <div class="container-fluid">
+        <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Folders 
+            <hr>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover" style="max-width: 400px;">
+                <thead>
+                    <tr>
+                        <th><span class="glyphicon glyphicon-folder-open" style="color: #94C6F0;"></span></th>
+                        <th style="color: #94C6F0;">Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="f in children" style="cursor: pointer;" ng-click="folderClick(header, f.uri)">
+                        <td><span class="glyphicon glyphicon-folder-open" style="color: #94C6F0;"></span></td>
+                        <td>{{f.uri.slice(1)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+        </div>
+    </div>
+</div>
+
+
+<div ng-show="propertiesActiveTrue" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+    <br>
+    <div ng-show="propertiesError">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <h3 style="color: #94C6F0;"><span class="glyphicon glyphicon-remove"></span> {{msg}}</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div ng-show="propertiesShow">
         <div class="container-fluid" style="color: #94C6F0; font-weight: bold;">
             <div class="row" style="margin-left: 20px";>
                 <span style="color: #000;">Add:</span> <span style="margin-left: 20px;">Properties | Property Set</span>
@@ -96,30 +97,5 @@
                 </table>
             </div>
         </div>
-
     </div>
-
-    <div ng-show="buildsActiveTrue"style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
-        <br><br>
-        <div class="container-fluid">
-            <div class="row">
-                <table class="table table-striped table-hover" style="font-size: 14px">
-                    <thead style="color: #94C6F0;">
-                        <th>Library</th>
-                        <th>Latest</th>
-                        <th>Latest Released</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><br></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br><br><br><br><br><br><br><br><br><br>
-            </div>
-        </div>
-    </div>
-
 </div>

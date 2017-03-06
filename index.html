@@ -32,6 +32,10 @@
     <script src="js/controllers/DashboardController.js"></script>
     <script src="js/controllers/RelationMapController.js"></script>
     <script src="js/controllers/RepoController.js"></script>
+    <script src="js/controllers/Repo2Controller.js"></script>
+    <script src="js/controllers/Repo3Controller.js"></script>
+    
+    
 
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
@@ -215,7 +219,7 @@
                         </li>
  
                         <li  ng-repeat="item in menuItems">
-                            <a href="#/repo/{{item.repoKey}}"><i class="fa fa-sitemap fa-fw"></i> {{item.repoKey}}</a> 
+                            <a href="#/repo/{{item.key}}"><i class="fa fa-sitemap fa-fw"></i> {{item.key}}</a> 
                         </li>
                         
                     </ul>

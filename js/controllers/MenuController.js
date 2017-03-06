@@ -5,14 +5,13 @@ ArtifactoryApp.controller("MenuController",
 
         $http ({
             method: 'GET',
-            url: APIService.storageinfo,
+            url: APIService.repositories,
             }).then(function successCallback(response) {
-                //console.log(response);
-                $scope.menuItems = response.data.repositoriesSummaryList;
+                $scope.menuItems = response.data;
                 //console.log($scope.menuItems);
             }, function errorCallback(response) {
                 if(response.status = 401) {
-                    //console.log(response);
+                    console.log(response);
             }
         });
 

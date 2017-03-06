@@ -2,12 +2,18 @@ ArtifactoryApp.service('APIService', function() {
   
     var APIUrl = "http://localhost:3000/api/";
 
-    var storageinfo = APIUrl + "storageinfo/";
+    var repositories = APIUrl + "repositories/";
     var storage = APIUrl + "storage/";
+    var repositoriesProperties = APIUrl + "repositoriesProperties/";
+    var storageSecondLevel = APIUrl + "storageSecondLevel/";
+    var storageTheirdLevel = APIUrl + "storageTheirdLevel/";
     
     return {
-        storageinfo: storageinfo,
-        storage: storage
+        repositories: repositories,
+        storage: storage,
+        repositoriesProperties: repositoriesProperties,
+        storageSecondLevel: storageSecondLevel,
+        storageTheirdLevel: storageTheirdLevel
     }; 
     
 });

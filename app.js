@@ -28,9 +28,19 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
             controller: 'RelationMapController'
         }).
         
-        when('/repo/:id', {
+        when('/repo/:repo', {
             templateUrl: 'templates/repo.html',
             controller: 'RepoController'
+        }).
+
+        when('/repo2/:repo1/:repo2', {
+            templateUrl: 'templates/repo2.html',
+            controller: 'Repo2Controller'
+        }).
+
+        when('/repo3/:repo1/:repo2/:repo3', {
+            templateUrl: 'templates/repo3.html',
+            controller: 'Repo3Controller'
         }).
 
         otherwise({
