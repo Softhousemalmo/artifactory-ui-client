@@ -34,7 +34,8 @@
     <script src="js/controllers/RepoController.js"></script>
     <script src="js/controllers/Repo2Controller.js"></script>
     <script src="js/controllers/Repo3Controller.js"></script>
-    
+    <script src="js/controllers/Repo4Controller.js"></script>
+    <script src="js/controllers/ArtifactController.js"></script>
     
 
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -218,8 +219,8 @@
                             <!-- /input-group -->
                         </li>
  
-                        <li  ng-repeat="item in menuItems">
-                            <a href="#/repo/{{item.key}}"><i class="fa fa-sitemap fa-fw"></i> {{item.key}}</a> 
+                        <li>
+                            <a href="#/repo/{{menuItems.key}}"><i class="fa fa-sitemap fa-fw"></i> {{menuItems.key}}</a> 
                         </li>
                         
                     </ul>

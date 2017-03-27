@@ -43,6 +43,16 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
             controller: 'Repo3Controller'
         }).
 
+        when('/repo4/:repo1/:repo2/:repo3/:repo4', {
+            templateUrl: 'templates/repo4.html',
+            controller: 'Repo4Controller'
+        }).
+
+        when('/artifact/:repo1/:repo2/:repo3/:repo4/:repo5', {
+            templateUrl: 'templates/artifact.html',
+            controller: 'ArtifactController'
+        }).
+
         otherwise({
             redirectTo: '/dashboard'
         });

@@ -1,6 +1,7 @@
 <ul class="nav nav-tabs nav-justified" style="margin-top: 10px;">
     <li style="cursor: pointer;" role="presentation" class="{{generalActiveTrue}}"><a ng-click="generalActive()">General</a></li>
     <li style="cursor: pointer;" role="presentation" class="{{propertiesActiveTrue}}"><a ng-click="propertiesActive()">Properties</a></li>
+    <li style="cursor: pointer;" role="presentation" class="{{compatibilityActiveTrue}}"><a ng-click="compatibilityActive()">Compatibility</a></li>    
     </li>
 </ul>
 <div ng-show="generalActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
@@ -24,6 +25,8 @@
             Last Modified: <br>
             Last Modified by:<br>
             Last Updated: <br>
+            Size:
+
 
         </div>
         <div class="col-md-10">
@@ -35,33 +38,41 @@
             {{repoData.lastModified}} <br>
             {{repoData.modifiedBy}}<br>
             {{repoData.lastUpdated}} <br>
+            {{repoData.size / 1000000 | number:2}} MB <br>
         </div>
     </div>
 
     <div class="container-fluid">
-        <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Folders 
+        <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Checksums 
             <hr>
         </div>
     </div>
+
     <div class="container-fluid">
-        <div class="col-md-12">
-            <table class="table table-condensed table-hover" style="max-width: 400px;">
-                <thead>
-                    <tr>
-                        <th><span class="glyphicon glyphicon-folder-open" style="color: #94C6F0;"></span></th>
-                        <th style="color: #94C6F0;">Version</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="f in children" style="cursor: pointer;" ng-click="folderClick(header, f.uri)">
-                        <td><span class="glyphicon glyphicon-folder-open" style="color: #94C6F0;"></span></td>
-                        <td>{{f.uri.slice(1)}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br><br>
+        <div class="col-md-2">
+            md5: <br>
+            sha1: <br>
+        </div>
+
+        <div class="col-md-10">
+            {{repoData.checksums.md5}} <br>
+            {{repoData.checksums.sha1}}
+            <br><br><br>
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="col-md-2">
+            <a href="/#/compatibility">
+                <button class="btn btn-primary">Download</button>
+            </A>
+        </div>
+
+        <div class="col-md-10">
+            <br><br><br>
+        </div>
+    </div>
+
 </div>
 
 
@@ -104,3 +115,16 @@
         </div>
     </div>
 </div>
+
+<div ng-show="compatibilityActiveTrue" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+    <br>
+    <div ng-show="propertiesError">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <h3 style="color: #94C6F0;">Compatibility</h3>
+            </div>
+            <iframe ng-src="relationMap/relation.html" frameborder="0" width="100%" height="500px">
+                <!--content-->
+            </iframe>
+        </div>
+    </div>

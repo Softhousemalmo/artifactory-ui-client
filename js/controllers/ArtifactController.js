@@ -1,4 +1,4 @@
-    ArtifactoryApp.controller("Repo3Controller",
+    ArtifactoryApp.controller("ArtifactController",
     function ($scope, $http, $routeParams, $location, APIService){
 
     $scope.generalActiveTrue = "active";  
@@ -6,26 +6,36 @@
     $scope.generalActive = function () {
         $scope.generalActiveTrue = "active";
         $scope.propertiesActiveTrue = "";
+        $scope.compatibilityActiveTrue = "";
     };    
     
     $scope.propertiesActive = function () {
         $scope.generalActiveTrue = "";
         $scope.propertiesActiveTrue = "active";
+        $scope.compatibilityActiveTrue = "";        
+    };
+
+    $scope.compatibilityActive = function () {
+        $scope.generalActiveTrue = "";
+        $scope.propertiesActiveTrue = "";
+        $scope.compatibilityActiveTrue = "active";        
     };
    
     $scope.goBack = function() {
         window.history.back();
     };
     
-    $scope.header =  $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3;
+    $scope.header =  $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3 + '/' + $routeParams.repo4 + '/' + $routeParams.repo5;
    
     $http ({
         method: 'GET',
-        url: APIService.storageTheirdLevel + $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3,
+        url: APIService.storageArtifactLevel + $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3 + '/' + $routeParams.repo4 + '/' + $routeParams.repo5,
         }).then(function successCallback(response) {
             console.log(response.data);
             $scope.repoData = response.data;
+            $scope.downloadUrl = "http://" + response.data.downloadUri;
             $scope.children = response.data.children;
+            
         }, function errorCallback(response) {
             if(response.status = 401) {
                 console.log(response);
@@ -51,10 +61,5 @@
                 console.log(response);
         }
     });
-
-    $scope.folderClick = function(href1, href2) {
-        console.log('/#/repo4/' + href1  + href2);
-        $location.path('repo4/' + href1  + href2);
-    };
     
 });

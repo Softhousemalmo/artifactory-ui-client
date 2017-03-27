@@ -1,4 +1,4 @@
-    ArtifactoryApp.controller("Repo3Controller",
+    ArtifactoryApp.controller("Repo4Controller",
     function ($scope, $http, $routeParams, $location, APIService){
 
     $scope.generalActiveTrue = "active";  
@@ -17,11 +17,11 @@
         window.history.back();
     };
     
-    $scope.header =  $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3;
+    $scope.header =  $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3 + '/' + $routeParams.repo4;
    
     $http ({
         method: 'GET',
-        url: APIService.storageTheirdLevel + $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3,
+        url: APIService.storageFourthLevel + $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3 + '/' + $routeParams.repo4,
         }).then(function successCallback(response) {
             console.log(response.data);
             $scope.repoData = response.data;
@@ -53,8 +53,8 @@
     });
 
     $scope.folderClick = function(href1, href2) {
-        console.log('/#/repo4/' + href1  + href2);
-        $location.path('repo4/' + href1  + href2);
+        console.log('/#/artifact/' + href1  + href2);
+        $location.path('artifact/' + href1  + href2);
     };
     
 });

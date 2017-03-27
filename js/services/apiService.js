@@ -7,13 +7,17 @@ ArtifactoryApp.service('APIService', function() {
     var repositoriesProperties = APIUrl + "repositoriesProperties/";
     var storageSecondLevel = APIUrl + "storageSecondLevel/";
     var storageTheirdLevel = APIUrl + "storageTheirdLevel/";
+    var storageFourthLevel = APIUrl + "storageFourthLevel/";  
+    var storageArtifactLevel = APIUrl + "storageArtifactLevel/";  
     
     return {
         repositories: repositories,
         storage: storage,
         repositoriesProperties: repositoriesProperties,
         storageSecondLevel: storageSecondLevel,
-        storageTheirdLevel: storageTheirdLevel
+        storageTheirdLevel: storageTheirdLevel,
+        storageFourthLevel: storageFourthLevel,
+        storageArtifactLevel: storageArtifactLevel
     }; 
     
 });
