@@ -36,6 +36,8 @@
     <script src="js/controllers/Repo3Controller.js"></script>
     <script src="js/controllers/Repo4Controller.js"></script>
     <script src="js/controllers/ArtifactController.js"></script>
+    <script src="js/controllers/AuthController.js"></script>
+    <script src="js/controllers/SearchController.js"></script>
     
 
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -64,7 +66,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="branding/img/logo.png" width="45px" height="45px">
                 </a>
-                <a class="navbar-brand-text" href="index.html">
+                <a class="navbar-brand-text" href="#/login">
                     Artifactory UI
                 </a>
             </div>
@@ -211,7 +213,7 @@
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
+                                    <button class="btn btn-default" type="button" ng-controller="SearchController" ng-click="search()">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </span>

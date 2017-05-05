@@ -39,7 +39,7 @@
     myDiagram.nodeTemplate =
       $(go.Node, "Auto",  // the whole node panel
         { selectionAdorned: true,
-          resizable: true,
+          resizable: false,
           layoutConditions: go.Part.LayoutStandard & ~go.Part.LayoutNodeSized,
           fromSpot: go.Spot.AllSides,
           toSpot: go.Spot.AllSides,
@@ -115,19 +115,22 @@
 
     // create the model for the E-R diagram
     var nodeDataArray = [
-      { key: "ext-release-local",
+      { key: "Abstraction_Library.2.0.0.50.library",
         items: [ ] },
-      { key: "exp-snapshot-local",
+      { key: "TcVersion,3.1.4020.28",
         items: [ ] },
-      { key: "softhouse-generic",
+      { key: "Tp_Service,1.0",
         items: [ ] },
-      { key: "softhouse-maven",
+      { key: "Tp_Utilities,1.1",
+        items: [ ] },
+      { key: "Tp_Logger,1.1",
         items: [ ] },
     ];
     var linkDataArray = [
-      { from: "ext-release-local", to: "exp-snapshot-local", text: "", toText: "" },
-      { from: "ext-release-local", to: "softhouse-generic", text: "", toText: "" },
-      { from: "softhouse-maven", to: "ext-release-local", text: "", toText: "" }
+      { from: "TcVersion,3.1.4020.28", to: "Abstraction_Library.2.0.0.50.library", text: "", toText: "" },
+      { from: "Tp_Service,1.0", to: "Abstraction_Library.2.0.0.50.library", text: "", toText: "" },      
+      { from: "Tp_Utilities,1.1", to: "Abstraction_Library.2.0.0.50.library", text: "", toText: "" },
+      { from: "Tp_Logger,1.1", to: "Abstraction_Library.2.0.0.50.library", text: "", toText: "" }
     ];
     myDiagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
   }

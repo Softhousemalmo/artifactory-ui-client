@@ -13,9 +13,19 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
         
         $routeProvider.
 
+        when('/login', {
+            templateUrl: 'templates/login.html',
+            controller: 'AuthController'
+        }).
+
         when('/start', {
             templateUrl: 'templates/start.html',
             controller: 'StartController'
+        }).
+
+         when('/search', {
+            templateUrl: 'templates/search.html',
+            controller: 'SearchController'
         }).
         
         when('/dashboard', {
@@ -54,7 +64,7 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
         }).
 
         otherwise({
-            redirectTo: '/dashboard'
+            redirectTo: '/login'
         });
     }
                        
