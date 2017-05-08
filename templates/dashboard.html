@@ -2,55 +2,37 @@
     
       <div class="row">
 
-        <div class="col-sm-4 col-lg-3">
+        <div class="col-sm-12 col-lg-12">
             <div class="panel">
                 <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Latest Builds (5)</div>
                 <div class="panel-body">
                     <table class="table table-hover art-table">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Version</th>
-                                <th>Date</th>                               
-                                <th>Author</th>    
+                                <th>Date & Time</th>                               
+                                <th>Path</th>    
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><!-- <fav-star-directive></fav-star-directive> --></td>
-                                <td>404</td>
-                                <td>N/A</td>
-                                <td>Unable to find latest!</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4 col-lg-3">
-            <div class="panel">
-                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Filestore Summary</div>
-                <div class="panel-body">
-                    <table class="table table-hover art-table">
-                        <thead>
-                            <tr>
-                                <th>Space</th>
-                                <th>Capacity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Total:</td>
-                                <td>{{storageInfo.totalSpace}}</td>
+                                <td>{{build1.lastStarted.slice(0,10)}} - {{build1.lastStarted.slice(11,19)}}</td>
+                                <td>{{build1.uri}}</td>
                             </tr>
                             <tr>
-                                <td>Used:</td>
-                                <td>{{storageInfo.usedSpace}}</td>
+                                <td>{{build2.lastStarted.slice(0,10)}} - {{build2.lastStarted.slice(11,19)}}</td>
+                                <td>{{build2.uri}}</td>
                             </tr>
                             <tr>
-                                <td>Free:</td>
-                                <td>{{storageInfo.freeSpace}}</td>
+                                <td>{{build3.lastStarted.slice(0,10)}} - {{build3.lastStarted.slice(11,19)}}</td>
+                                <td>{{build3.uri}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{build4.lastStarted.slice(0,10)}} - {{build4.lastStarted.slice(11,19)}}</td>
+                                <td>{{build4.uri}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{build5.lastStarted.slice(0,10)}} - {{build5.lastStarted.slice(11,19)}}</td>
+                                <td>{{build5.uri}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -67,7 +49,33 @@
                 </div>
             </div>
         </div>
-        
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Widget</div>
+                <div class="panel-body">
+                    Widget
+                </div>
+            </div>
+        </div>  
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Widget</div>
+                <div class="panel-body">
+                    Widget
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-3">
+            <div class="panel">
+                <div class="panel-heading"><div class="glyphicon glyphicon-th-list glyphicon-icon" aria-hidden="true"></div> Widget</div>
+                <div class="panel-body">
+                    Widget
+                </div>
+            </div>
+        </div>
           
       </div><!-- /row -->
       

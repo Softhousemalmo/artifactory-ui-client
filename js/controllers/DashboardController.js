@@ -2,21 +2,29 @@ ArtifactoryApp.controller("DashboardController",
     function (
         $scope, $location, $http, APIService
     ){
-   /*     
+   
     $http ({
         method: 'GET',
-        url: APIService.storageinfo,
+        url: APIService.APIUrl + 'latest/build',
         }).then(function successCallback(response) {
-            //console.log(response);
-            $scope.storageInfo = response.data.storageSummary.fileStoreSummary;
-            //console.log($scope.storageInfo);
+            var buildLength = response.data.builds.length;
+
+            $scope.build1 = response.data.builds[buildLength-1];
+            $scope.build2 = response.data.builds[buildLength-2];
+            $scope.build3 = response.data.builds[buildLength-3];
+            $scope.build4 = response.data.builds[buildLength-4];
+            $scope.build5 = response.data.builds[buildLength-1];
+            
+            
+
+            console.log($scope.build1);
+
         }, function errorCallback(response) {
             if(response.status = 401) {
                 console.log(response);
         }
     });
 
-    */
     $scope.labels = ["February", "March", "April", "May", "June", "July", "August"];
     $scope.series = ['Series A', 'Series B'];
     $scope.data = [

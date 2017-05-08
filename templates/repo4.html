@@ -30,11 +30,11 @@
             {{repoData.path.slice(1)}} <br>
             {{repoData.path}} <br>
             {{repoData.repo}} <br>
-            {{repoData.created}} <br>
+            {{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}<br>   
             {{repoData.createdBy}}<br>
-            {{repoData.lastModified}} <br>
+            {{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}<br>
             {{repoData.modifiedBy}}<br>
-            {{repoData.lastUpdated}} <br>
+            {{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}<br>
         </div>
     </div>
 

@@ -25,9 +25,9 @@
         <div class="col-md-10">
             {{repoData.repo}} <br>
             {{repoData.path}} <br>
-            {{repoData.created}} <br>
-            {{repoData.lastModified}} <br>
-            {{repoData.lastUpdated}} <br>
+            {{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}<br>   
+            {{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}<br>
+            {{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}<br>
             
 
         </div>

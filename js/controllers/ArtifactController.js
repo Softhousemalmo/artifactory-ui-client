@@ -35,6 +35,8 @@
             $scope.repoData = response.data;
             $scope.downloadUrl = "http://" + response.data.downloadUri;
             $scope.children = response.data.children;
+
+            $scope.dependencyLoad(response.data.originalChecksums.sha);
             
         }, function errorCallback(response) {
             if(response.status = 401) {
@@ -61,5 +63,17 @@
                 console.log(response);
         }
     });
+
+    $scope.dependencyLoad = function(sha) {
+        $http ({
+            method: 'GET',
+            url: APIService + 'dependencys/' + sha 
+        }).then(function successCallback(response) {
+                console.log(response);
+            }, function errorCallback(response) {
+                console.log(response);
+                $scope.depend = response.statusText;                
+        });
+    };
     
 });

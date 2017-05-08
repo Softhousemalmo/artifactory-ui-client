@@ -8,9 +8,10 @@ ArtifactoryApp.service('APIService', function() {
     var storageSecondLevel = APIUrl + "storageSecondLevel/";
     var storageTheirdLevel = APIUrl + "storageTheirdLevel/";
     var storageFourthLevel = APIUrl + "storageFourthLevel/";  
-    var storageArtifactLevel = APIUrl + "storageArtifactLevel/";  
+    var storageArtifactLevel = APIUrl + "storageArtifactLevel/";
     
     return {
+        APIUrl: APIUrl,
         repositories: repositories,
         storage: storage,
         repositoriesProperties: repositoriesProperties,
