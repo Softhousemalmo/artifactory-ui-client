@@ -5,9 +5,6 @@ ArtifactoryApp.service('APIService', function() {
     var repositories = APIUrl + "repositories/";
     var storage = APIUrl + "storage/";
     var repositoriesProperties = APIUrl + "repositoriesProperties/";
-    var storageSecondLevel = APIUrl + "storageSecondLevel/";
-    var storageTheirdLevel = APIUrl + "storageTheirdLevel/";
-    var storageFourthLevel = APIUrl + "storageFourthLevel/";  
     var storageArtifactLevel = APIUrl + "storageArtifactLevel/";
     
     return {
@@ -15,9 +12,6 @@ ArtifactoryApp.service('APIService', function() {
         repositories: repositories,
         storage: storage,
         repositoriesProperties: repositoriesProperties,
-        storageSecondLevel: storageSecondLevel,
-        storageTheirdLevel: storageTheirdLevel,
-        storageFourthLevel: storageFourthLevel,
         storageArtifactLevel: storageArtifactLevel
     }; 
     

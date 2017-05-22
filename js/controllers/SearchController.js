@@ -8,10 +8,8 @@ ArtifactoryApp.controller("SearchController",
             method: 'POST',
             url: APIService.APIUrl + 'search/' + query,
             }).then(function successCallback(response) {
-                console.log(response);
             }, function errorCallback(response) {
                 if(response.status = 401) {
-                    console.log(response);
             }
         });
 

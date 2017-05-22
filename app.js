@@ -5,12 +5,11 @@ var ArtifactoryApp = angular
         'ngSanitize',
         'chart.js',
         'ds.clock'
-    ]
-);
+    ]);
 
 ArtifactoryApp.config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
-        
+    function ($routeProvider, $locationProvider) {
+
         $routeProvider.
 
         when('/login', {
@@ -23,49 +22,29 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
             controller: 'StartController'
         }).
 
-         when('/search', {
+        when('/search', {
             templateUrl: 'templates/search.html',
             controller: 'SearchController'
         }).
-        
+
         when('/dashboard', {
             templateUrl: 'templates/dashboard.html',
             controller: 'DashboardController'
         }).
-        
+
         when('/compatibility', {
             templateUrl: 'templates/relationMap.html',
             controller: 'RelationMapController'
         }).
-        
-        when('/repo/:repo', {
+
+        when('/repo/:repo*', {
             templateUrl: 'templates/repo.html',
             controller: 'RepoController'
-        }).
-
-        when('/repo2/:repo1/:repo2', {
-            templateUrl: 'templates/repo2.html',
-            controller: 'Repo2Controller'
-        }).
-
-        when('/repo3/:repo1/:repo2/:repo3', {
-            templateUrl: 'templates/repo3.html',
-            controller: 'Repo3Controller'
-        }).
-
-        when('/repo4/:repo1/:repo2/:repo3/:repo4', {
-            templateUrl: 'templates/repo4.html',
-            controller: 'Repo4Controller'
-        }).
-
-        when('/artifact/:repo1/:repo2/:repo3/:repo4/:repo5', {
-            templateUrl: 'templates/artifact.html',
-            controller: 'ArtifactController'
         }).
 
         otherwise({
             redirectTo: '/login'
         });
     }
-                       
+
 ]);

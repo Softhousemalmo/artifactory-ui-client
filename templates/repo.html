@@ -6,8 +6,10 @@
 <div ng-show="generalActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
     <div class="container-fluid">
         <div class="col-md-12">
+                        <h4 ng-click="goBack()" style="color: #94C6F0; cursor: pointer;"><span class="glyphicon glyphicon-menu-left" style="top: 2px;"></span> Go Back</h4>
+
             <br>
-            <h3 style="color: #94C6F0;"><span class="glyphicon glyphicon-folder-close"></span> {{header}}</h3>
+            <h3 style="color: #94C6F0;"><span class="glyphicon glyphicon-folder-close"></span> {{artifactoryUrl}}</h3>
         </div>
         <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Info 
             <hr>
@@ -18,18 +20,24 @@
             Name: <br>
             Path: <br>
             Created: <br>
+            Created by:<br>
             Last Modified: <br>
+            Last Modified by:<br>
             Last Updated: <br>
+            Size: <br><br>
+            Dependencies:
 
         </div>
         <div class="col-md-10">
             {{repoData.repo}} <br>
             {{repoData.path}} <br>
             {{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}<br>   
+            {{repoData.createdBy}}<br>
             {{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}<br>
+            {{repoData.modifiedBy}}<br>
             {{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}<br>
-            
-
+            {{repoData.size / 1000000 | number:2}} MB <br><br>
+            {{depend}}
         </div>
     </div>
 
