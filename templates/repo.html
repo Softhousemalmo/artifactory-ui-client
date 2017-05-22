@@ -20,18 +20,24 @@
             Name: <br>
             Path: <br>
             Created: <br>
+            Created by:<br>
             Last Modified: <br>
+            Last Modified by:<br>
             Last Updated: <br>
+            Size: <br><br>
+            Dependencies:
 
         </div>
         <div class="col-md-10">
             {{repoData.repo}} <br>
             {{repoData.path}} <br>
             {{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}<br>   
+            {{repoData.createdBy}}<br>
             {{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}<br>
+            {{repoData.modifiedBy}}<br>
             {{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}<br>
-            
-
+            {{repoData.size / 1000000 | number:2}} MB <br><br>
+            {{depend}}
         </div>
     </div>
 

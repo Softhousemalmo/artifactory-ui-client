@@ -36,13 +36,16 @@
                     method: 'GET',
                     url: APIService.storage + "?path=" + $scope.artifactoryUrl + "&properties=true",
                 }).then(function successCallback(response) {
-                    if (response.status === 400) {
+                    if (!response.status === 200) {
                         $scope.msg = response.data.errors[0].message;
                         $scope.propertiesError = true;
                         $scope.propertiesShow = false;
+                        console.log("propertiesError" ,  $scope.propertiesError);
+
                     } else {
                         $scope.propertiesError = false;
                         $scope.propertiesShow = true;
+                         console.log("propertiesShow" ,  $scope.propertiesShow);
 
                     }
                 }, function errorCallback(response) {
