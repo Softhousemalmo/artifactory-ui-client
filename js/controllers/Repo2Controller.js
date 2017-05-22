@@ -23,12 +23,12 @@
         method: 'GET',
         url: APIService.storageSecondLevel + $routeParams.repo1 + '/' + $routeParams.repo2,
         }).then(function successCallback(response) {
-            console.log(response.data);
+           // console.log(response.data);
             $scope.repoData = response.data;
             $scope.children = response.data.children;
         }, function errorCallback(response) {
             if(response.status = 401) {
-                console.log(response);
+               // console.log(response);
         }
     });
 
@@ -40,7 +40,7 @@
                 $scope.msg = response.data.errors[0].message;
                 $scope.propertiesError = true;
                 $scope.propertiesShow = false;
-                console.log($scope.msg)
+               // console.log($scope.msg)
             } else {
                 $scope.propertiesError = false;
                 $scope.propertiesShow = true;
@@ -48,12 +48,12 @@
             }
         }, function errorCallback(response) {
             if(response.status = 401) {
-                console.log(response);
+               // console.log(response);
         }
     });
 
     $scope.folderClick = function(href1, href2) {
-        console.log('/#/repo3/' + href1  + href2);
+       // console.log('/#/repo3/' + href1  + href2);
         $location.path('repo3/' + href1  + href2);
     };
     

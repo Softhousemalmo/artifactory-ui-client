@@ -17,11 +17,11 @@ ArtifactoryApp.controller("DashboardController",
             
             
 
-            console.log($scope.build1);
+         //   console.log($scope.build1);
 
         }, function errorCallback(response) {
             if(response.status = 401) {
-                console.log(response);
+           //     console.log(response);
         }
     });
 

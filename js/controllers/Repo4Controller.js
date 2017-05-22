@@ -34,7 +34,7 @@
 
     $http ({
         method: 'GET',
-        url: APIService.repositoriesProperties + $routeParams.repo + '/',
+        url: APIService.repositoriesProperties + $routeParams + '?properities',
     }).then(function successCallback(response) {
             if(response.status === 200) {
                 $scope.msg = response.data.errors[0].message;
