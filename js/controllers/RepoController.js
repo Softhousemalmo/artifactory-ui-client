@@ -23,14 +23,12 @@
                     method: 'GET',
                     url: APIService.storage + "?path=" + $scope.artifactoryUrl,
                 }).then(function successCallback(response) {
-                    //console.log(response);
                     $scope.header = response.data.repo;
                     $scope.repoData = response.data;
                     $scope.children = response.data.children;
                     console.log($scope.repoData);
                 }, function errorCallback(response) {
                     if (response.status = 401) {
-                        console.log(response);
                     }
                 });
 
@@ -42,7 +40,6 @@
                         $scope.msg = response.data.errors[0].message;
                         $scope.propertiesError = true;
                         $scope.propertiesShow = false;
-                        console.log($scope.msg)
                     } else {
                         $scope.propertiesError = false;
                         $scope.propertiesShow = true;
@@ -50,7 +47,6 @@
                     }
                 }, function errorCallback(response) {
                     if (response.status = 401) {
-                        console.log(response);
                     }
                 });
             }

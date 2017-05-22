@@ -25,13 +25,11 @@
         window.history.back();
     };
     
-    //$scope.header =  $routeParams.repo1 + '/' + $routeParams.repo2 + '/' + $routeParams.repo3 + '/' + $routeParams.repo4 + '/' + $routeParams.repo5;
    
     $http ({
         method: 'GET',
         url: APIService.storageArtifactLevel + $routeParams ,
         }).then(function successCallback(response) {
-         //   console.log(response.data);
             $scope.repoData = response.data;
             $scope.downloadUrl = "http://" + response.data.downloadUri;
             $scope.children = response.data.children;
@@ -40,7 +38,6 @@
             
         }, function errorCallback(response) {
             if(response.status = 401) {
-           //     console.log(response);
         }
     });
 
@@ -52,7 +49,6 @@
                 $scope.msg = response.data.errors[0].message;
                 $scope.propertiesError = true;
                 $scope.propertiesShow = false;
-            //    console.log($scope.msg)
             } else {
                 $scope.propertiesError = false;
                 $scope.propertiesShow = true;
@@ -60,7 +56,6 @@
             }
         }, function errorCallback(response) {
             if(response.status = 401) {
-           //     console.log(response);
         }
     });
 
@@ -69,9 +64,7 @@
             method: 'GET',
             url: APIService + 'dependencys/' + sha 
         }).then(function successCallback(response) {
-            //    console.log(response);
             }, function errorCallback(response) {
-           //     console.log(response);
                 $scope.depend = response.statusText;                
         });
     };
