@@ -25,6 +25,7 @@
         window.history.back();
     };
     
+    
    
     $http ({
         method: 'GET',
