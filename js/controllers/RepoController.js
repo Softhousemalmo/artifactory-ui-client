@@ -1,5 +1,5 @@
     ArtifactoryApp.controller("RepoController",
-        function ($scope, $http, $routeParams, $location, APIService) {
+        function ($scope, $http, $routeParams, $location, $rootScope, APIService) {
             $scope.artifactoryUrl = $routeParams.repo;
 
             $scope.generalActiveTrue = "active";
@@ -30,7 +30,6 @@
                     $scope.header = response.data.repo;
                     $scope.repoData = response.data;
                     $scope.children = response.data.children;
-                    console.log($scope.repoData);
                 }, function errorCallback(response) {
                     if (response.status = 401) {}
                 });
@@ -55,7 +54,7 @@
                 }, function errorCallback(response) {
                     if (response.status = 401) {}
                 });
-                
+
                 // $http({
                 //     method: 'GET',
                 //     url: APIService.search + 'dependency?sha1=' + response.data.checksums.sha1
@@ -103,19 +102,18 @@
             $scope.folderClick = function (href1, href2) {
                 $scope.artifactoryUrl += href2;
                 var len = $scope.children.length;
-                console.log("length", len);
                 getChildren();
 
             };
-            $scope.goBack = function () {
-                $routeParams.back();
-                getChildren();
-            };
 
-            // $scope.dependencyLoad = function (sha) {
-                
-            //     getChildren();
-            // };
+            $scope.goBack = function (href1) {
+                console.log("href 1 = ", href1, href1.length);
+                console.log("href 2 = ", href1.substring(0, href1.lastIndexOf("/")),href1.substring(0, href1.lastIndexOf("/")).length );
+                var pathlen= href1.substring(0, href1.lastIndexOf("/")).length ;
+                 if (pathlen > 0){
+                $scope.artifactoryUrl = href1.substring(0, href1.lastIndexOf("/"));
+                getChildren();}
+       };
 
 
         });
