@@ -55,6 +55,29 @@
                 }, function errorCallback(response) {
                     if (response.status = 401) {}
                 });
+                
+                // $http({
+                //     method: 'GET',
+                //     url: APIService.search + 'dependency?sha1=' + response.data.checksums.sha1
+                // }).then(function successCallback(response) {
+                //      if (!response.status === 200) {
+                //         $scope.msg = response.data.errors[0].message;
+                //         $scope.dependencyError = true;
+                //         $scope.dependencyShow = false;
+                //         console.log("dependencyError", $scope.propertiesError);
+
+                //     } else {
+                //         $scope.dependencyError = false;
+                //         $scope.dependencyShow = true;
+                //         $scope.dependency = response.data.properties;
+                //         console.log("propertiesShow", response.data.properties);
+
+                //     }
+
+                // }, function errorCallback(response) {
+                //     $scope.depend = response.statusText;
+                // });
+
 
                 $http({
                     method: 'GET',
@@ -63,10 +86,10 @@
                     $scope.repoData = response.data;
                     $scope.downloadUrl = "http://" + response.data.downloadUri;
                     $scope.children = response.data.children;
-                    $scope.checksumsSha = response.data.originalChecksums.sha;
+                    // $scope.checksumsSha = response.data.originalChecksums.sha;
 
-                    $scope.dependencyLoad($scope.checksums);
-                    console.log("sha " + $scope.checksums.length);
+                    // $scope.dependencyLoad($scope.checksums);
+                    // console.log("sha " + $scope.checksums.length);
 
                 }, function errorCallback(response) {
                     if (response.status = 401) {}
@@ -89,15 +112,10 @@
                 getChildren();
             };
 
-            $scope.dependencyLoad = function (sha) {
-                $http({
-                    method: 'GET',
-                    url: APIService + 'dependencys?' + sha
-                }).then(function successCallback(response) {}, function errorCallback(response) {
-                    $scope.depend = response.statusText;
-                });
-                getChildren();
-            };
+            // $scope.dependencyLoad = function (sha) {
+                
+            //     getChildren();
+            // };
 
 
         });
