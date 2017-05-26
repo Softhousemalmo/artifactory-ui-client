@@ -3,15 +3,20 @@
             $scope.artifactoryUrl = $routeParams.repo;
 
             $scope.generalActiveTrue = "active";
+            $scope.showGoBack = false;
 
             $scope.generalActive = function () {
                 $scope.generalActiveTrue = "active";
                 $scope.propertiesActiveTrue = "";
+                $scope.compatibilityActiveTrue = "";
+
             };
 
             $scope.propertiesActive = function () {
                 $scope.generalActiveTrue = "";
                 $scope.propertiesActiveTrue = "active";
+                $scope.compatibilityActiveTrue = "";
+
             };
 
             $scope.compatibilityActive = function () {
@@ -85,10 +90,7 @@
                     $scope.repoData = response.data;
                     $scope.downloadUrl = "http://" + response.data.downloadUri;
                     $scope.children = response.data.children;
-                    // $scope.checksumsSha = response.data.originalChecksums.sha;
 
-                    // $scope.dependencyLoad($scope.checksums);
-                    // console.log("sha " + $scope.checksums.length);
 
                 }, function errorCallback(response) {
                     if (response.status = 401) {}
@@ -102,18 +104,23 @@
             $scope.folderClick = function (href1, href2) {
                 $scope.artifactoryUrl += href2;
                 var len = $scope.children.length;
+                $scope.showGoBack = true;
+
                 getChildren();
 
             };
 
             $scope.goBack = function (href1) {
                 console.log("href 1 = ", href1, href1.length);
-                console.log("href 2 = ", href1.substring(0, href1.lastIndexOf("/")),href1.substring(0, href1.lastIndexOf("/")).length );
-                var pathlen= href1.substring(0, href1.lastIndexOf("/")).length ;
-                 if (pathlen > 0){
-                $scope.artifactoryUrl = href1.substring(0, href1.lastIndexOf("/"));
-                getChildren();}
-       };
+                console.log("href 2 = ", href1.substring(0, href1.lastIndexOf("/")), href1.substring(0, href1.lastIndexOf("/")).length);
+                var pathlen = href1.substring(0, href1.lastIndexOf("/")).length;
+                if (pathlen > 0) {
+                    $scope.artifactoryUrl = href1.substring(0, href1.lastIndexOf("/"));
+                    getChildren();
+                } else {
+                    $scope.showGoBack = false;
+                }
+            };
 
 
         });

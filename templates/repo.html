@@ -7,47 +7,76 @@
 </ul>
 
 <div ng-if="generalActiveTrue" style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
-    
+
     <div class="container-fluid">
         <div class="col-md-12">
-            <h4 ng-click="goBack(artifactoryUrl)" style="color: #94C6F0; cursor: pointer;"><span class="glyphicon glyphicon-menu-left" style="top: 2px;"></span> Go Back</h4>
+            <h4 ng-if="showGoBack" ng-click="goBack(artifactoryUrl)" style="color: #94C6F0; cursor: pointer;"><span class="glyphicon glyphicon-menu-left" style="top: 2px;"></span> Go Back</h4>
 
             <br>
             <h3 style="color: #94C6F0;"><span class="glyphicon glyphicon-folder-close"></span> {{artifactoryUrl}}</h3>
         </div>
         <div class="col-md-12" style="color: #94C6F0; font-weight: bold;"><br><br>Info
-            <hr>
         </div>
     </div>
 
     <div class="container-fluid">
-        <div class="col-md-2">
-            Name: 
-            <br> Path: 
-            <br> Uri:
-            <br> Created: 
-            <br> Created by:
-            <br> Last Modified: 
-            <br> Last Modified by:
-            <br> Last Updated: 
-            <br>Size: 
-            <br>
-            <br> Dependencies:
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row"> Name:</th>
+                    <td>{{repoData.repo}}</td>
+                </tr>
 
-        </div>
+                <tr>
+                    <th scope="row">Path:</th>
+                    <td> {{repoData.path}}</td>
 
-        <div class="col-md-10">
-            {{repoData.repo}} 
-            <br> {{repoData.path}}
-            <br> {{repoData.uri}}  
-            <br> {{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}
-            <br> {{repoData.createdBy}}
-            <br> {{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}
-            <br> {{repoData.modifiedBy}}
-            <br> {{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}<br>
-            {{repoData.size / 1000000 | number:2}} MB 
-            <br> {{depend}}
-        </div>
+                </tr>
+                <tr>
+                    <th scope="row">Uri:</th>
+                    <td>{{repoData.uri}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Created:</th>
+                    <td>{{repoData.created.slice(0,10)}} - {{repoData.created.slice(11,19)}}
+                    </td>
+
+                </tr>
+                <tr>
+                    <th scope="row"> Created by:</th>
+                    <td>{{repoData.createdBy}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Last Modified:</th>
+                    <td>{{repoData.lastModified.slice(0,10)}} - {{repoData.lastModified.slice(11,19)}}
+                    </td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Last Modified by:</th>
+                    <td>{{repoData.modifiedBy}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Last Updated:</th>
+                    <td>{{repoData.lastUpdated.slice(0,10)}} - {{repoData.lastUpdated.slice(11,19)}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Size:</th>
+                    <td>{{repoData.size / 1000000 | number:2}} MB</td>
+
+                </tr>
+                <tr>
+                    <th scope="row"> Dependencies:</th>
+                    <td>{{depend}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 
     <div ng-if=" children.length > 0">
@@ -150,14 +179,13 @@
 
 <div ng-if="compatibilityActiveTrue" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
     <br>
-    <div ng-show="propertiesError">
-        <div class="container-fluid">
-            <div class="col-md-12">
-                <h3 style="color: #94C6F0;">Compatibility</h3>
-            </div>
-            <iframe ng-src="relationMap/relation.html" frameborder="0" width="100%" height="500px">
-                <!--content-->
-            </iframe>
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <h3 style="color: #94C6F0;">Compatibility</h3>
         </div>
+        <iframe ng-src="relationMap/relation.html" frameborder="0" width="100%" height="500px">
+            <!--content-->
+        </iframe>
     </div>
 </div>
