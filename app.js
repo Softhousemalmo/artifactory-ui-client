@@ -22,9 +22,9 @@ ArtifactoryApp.config(['$routeProvider', '$locationProvider',
             controller: 'StartController'
         }).
 
-        when('/search', {
+        when('/search/results', {
             templateUrl: 'templates/search.html',
-            controller: 'SearchController'
+            controller: 'SearchResultController'
         }).
 
         when('/dashboard', {

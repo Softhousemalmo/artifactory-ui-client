@@ -1,19 +1,18 @@
 ArtifactoryApp.controller("SearchController",
     function (
-        $scope, $location, $http, $window, APIService
+        $scope, $location, $window, $route, SearchService
     ){
 
-   $scope.search = function(query) {   
-       $http ({
-            method: 'POST',
-            url: APIService.APIUrl + 'search/' + query,
-            }).then(function successCallback(response) {
-            }, function errorCallback(response) {
-                if(response.status = 401) {
-            }
-        });
+    $scope.search = function (query){
+        $scope.path = $location.path();
 
-        $location.path('search')
-   };
+        if($scope.path === '/search/results') {
+            SearchService.addSearch(query);
+            $route.reload()
+        } else {
+            SearchService.addSearch(query);
+            $location.path('/search/results');
+        }
+    };
 
 });
