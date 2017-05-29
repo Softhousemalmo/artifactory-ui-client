@@ -1,13 +1,10 @@
 <div class="container-fluid">
-    <div class="col-md-12">
+    <div class="col-md-12" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
         <br><br>
 
         <b ng-show="loader == false">You searched for: {{searchQuery}}</b>
-        <br>
-        <div class="loader" ng-show="loader" style="z-index: 1;">Loading...</div><br>
-
-
-
+        <hr>
+        <div class="loader" ng-show="loader" style="z-index: 1;">Loading...</div>
 
         <div ng-repeat="d in data">
             {{d.uri.slice(47,100000000000000)}}
