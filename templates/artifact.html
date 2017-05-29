@@ -4,6 +4,7 @@
     <li style="cursor: pointer;" role="presentation" class="{{compatibilityActiveTrue}}"><a ng-click="compatibilityActive()">Compatibility</a></li>    
     </li>
 </ul>
+
 <div ng-show="generalActiveTrue"style="font-size: 14px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
     <div class="container-fluid">
         <div class="col-md-12">
@@ -83,7 +84,7 @@
 </div>
 
 
-<div ng-show="propertiesActiveTrue" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
+<div ng-if="propertiesActiveTrue" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; min-height: 300px;">
     <br>
     <div ng-show="propertiesError">
         <div class="container-fluid">
@@ -135,3 +136,4 @@
             </iframe>
         </div>
     </div>
+</div>
