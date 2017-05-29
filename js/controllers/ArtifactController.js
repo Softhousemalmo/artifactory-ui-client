@@ -66,7 +66,7 @@
     $scope.dependencyLoad = function(sha) {
         $http ({
             method: 'GET',
-            url: APIService + 'dependencys/' + sha 
+            url: APIService + 'dependencys?' + sha 
         }).then(function successCallback(response) {
             }, function errorCallback(response) {
                 $scope.depend = response.statusText;                
